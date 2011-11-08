@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body id="store">
+<body class="<%= controller.controller_name %>">
 	<div id="banner">
 		<%= image_tag("logo.png") %>
 		<%= @page_title || "Pragmatic Bookshelf" %>
@@ -15,10 +15,12 @@
 
 	<div id="columns">
 		<div id="side">
-			<a href="#">Home</a><br/>
-			<a href="#">Questions</a><br/>
-			<a href="#">News</a><br/>
-			<a href="#">Contact</a><br/>
+			<ul>
+				<li><a href="/">Home</a><br/></li>
+				<li><a href="/faq#">Questions</a><br/></li>
+				<li><a href="/news">News</a><br/></li>
+				<li><a href="/contact">Contact</a><br/></li>
+			</ul>
 		</div>
 
 		<div id="main">
