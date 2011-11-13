@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111111113514) do
+ActiveRecord::Schema.define(:version => 20111113173845) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(:version => 20111111113514) do
     t.text     "description"
     t.string   "image_url"
     t.decimal  "price",       :precision => 8, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+# Could not dump table "sqlite_stat1" because of following StandardError
+#   Unknown type '' for column 'tbl'
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

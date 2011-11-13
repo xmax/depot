@@ -27,7 +27,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
 				:order => {	:name => "Dave Thomas",
 							:address => "123 The Street",
 							:email => "dave@example.com",
-							:pay_type => "check" }
+							:pay_type => "Check" }
 		assert_response :success
 		assert_template "index"
 		cart = Cart.find(session[:cart_id])
@@ -48,7 +48,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
 
 		mail = ActionMailer::Base.deliveries.last
 		assert_equal ["dave@example.com"], mail.to
-		assert_equal "Max N. Bielikov <ua.xmax@gmail.com>", mail.from
+		assert_equal ["ua.xmax@gmail.com"], mail.from
 		assert_equal "Pragmatic Store Order Confirmation", mail.subject
 
 	end
